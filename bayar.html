@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pembayaran Produk</title>
+<style>
+
+body {
+  background:#0f0f1a;
+  color:white;
+  font-family:sans-serif;
+  text-align:center;
+  margin:0;
+  padding:20px;
+}
+
+.back { display: inline-block; padding: 10px 20px; background: #ff0000; color: 
+      rgb(255, 255, 255); font-weight: bold; border-radius: 8px; text-decoration: none; 
+      margin-top: 15px; transition: 0.2s ease;   animation: fadeInScale 0.6s ease forwards; }
+
+h2 {
+  font-size: 24px;
+  opacity:0;
+  transform: translateY(-20px);
+  animation: textIn 0.8s ease forwards;
+}
+@keyframes textIn {
+  0%   { opacity:0; transform:translateY(-20px); }
+  100% { opacity:1; transform:translateY(0); }
+}
+
+.qris-box {
+  opacity: 0;
+  transform: scale(0.5);
+  animation: textIn 0.5s ease forwards;
+  animation-delay: 0.3s;
+}
+@keyframes fadeInScale {
+  from { opacity:0; transform:scale(0.8); }
+  to   { opacity:1; transform:scale(1); }
+}
+
+img {
+  max-width:280px;
+  margin:20px auto;
+  display:block;
+  border-radius:10px;
+  border:2px solid #a1a1a100;
+}
+
+.btn {
+  background:#fefefe;
+  color:black;
+  padding:12px 20px;
+  border:none;
+  border-radius:8px;
+  font-weight:bold;
+  cursor:pointer;
+  margin-top:20px;
+  transition:0.2s ease;
+}
+.btn:disabled {
+  background:#555;
+  color:#aaa;
+  cursor:not-allowed;
+}
+.btn:hover:enabled { background:#00aaff; }
+
+label {
+  display:block;
+  margin-top:15px;
+  font-size:14px;
+  color:#ccc;
+}
+</style>
+</head>
+<body>
+
+<h2>💳 Scan QRIS untuk bayar</h2>
+
+<div class="qris-box">
+  <img src="Qris.jpeg" alt="QRIS Produk">
+  <p style="margin-top:8px; font-size:14px; color:#ccc;">
+    Setelah pembayaran selesai, centang konfirmasi di bawah:
+  </p>
+
+  <label>
+    <input type="checkbox" id="confirmPay" onchange="enableButton()"> Saya sudah melakukan pembayaran
+  </label>
+
+  <button id="btnBayar" class="btn" disabled onclick="lanjut()">Hubungi Admin</button>
+</div>
+
+<a href="produk.html" class="back">Kembali Ke Awal</a>
+
+<script>
+const noAdmin = "6285725215326";
+const produk = "STOK PELAJAR";
+const harga = "Rp 120.000";
+
+function enableButton() {
+  const check = document.getElementById("confirmPay");
+  const btn = document.getElementById("btnBayar");
+  btn.disabled = !check.checked;
+}
+
+function lanjut() {
+  const text = `Halo admin, saya sudah bayar untuk:\n${produk}\nHarga: ${harga}`;
+  window.location.href = `https://wa.me/${noAdmin}?text=${encodeURIComponent(text)}`;
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Layanan - Cyan Store X</title>
+  <style>
+body {
+  margin: 0;
+  background: linear-gradient(180deg, #000000, #000000);
+  color: white;
+  font-family: sans-serif;
+}
+
+.layanan {
+  text-align: center;
+  color: #000000;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.layanan h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #ff4fd8;
+  margin-bottom: 12px;
+  font-family: 'Montserrat', sans-serif; 
+  letter-spacing: 1px; 
+  text-transform: uppercase; 
+}
+
+.layanan-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 12px;
+  justify-items: center;
+}
+
+.layanan-card {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background: rgb(0, 0, 0);
+  border-radius: 10px;
+  overflow: hidden;
+  text-decoration: none;
+  color: #000000;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 6px rgb(0, 0, 0);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.layanan-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px; /* biar gambar tepi melengkung */
+}
+
+.layanan-card p {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.5);
+  font-size: 13px;
+  padding: 10px;
+  margin: 0;
+  color: #fff; /* teks deskripsi lebih jelas */
+}
+
+.layanan-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: rgba(17, 17, 17, 0.85);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid #333;
+  padding: 8px 0;
+  z-index: 1000;
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #aaa;
+  font-size: 12px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.nav-item svg {
+  width: 22px;
+  height: 22px;
+  margin-bottom: 4px;
+  fill: #aaa;
+  transition: all 0.3s ease;
+}
+
+.nav-item.active,
+.nav-item.active svg {
+  color: #ff4fd8;
+  fill: #ff4fd8;
+}
+
+.nav-item:hover {
+  color: #fff;
+  transform: scale(1.1);
+}
+
+.nav-item:hover svg {
+  fill: #fff;
+}
+
+.nav-item:active {
+  transform: scale(0.9);
+  opacity: 0.8;
+}
+  </style>
+</head>
+<body>
+
+  <main>
+    <h2 style="text-align:center; color:#ff4fd8;">Layanan Cyan Store X</h2>
+    <p style="text-align:center; color:#ccc;">Fitur utama yang kami sediakan untuk pelanggan.</p>
+  </main>
+
+<div class="layanan">
+  <h3>Layanan Kami</h3>
+  <div class="layanan-grid">
+    <div class="layanan-card">
+      <img src="rekber.jpeg" alt="Top-Up">
+      <p>Rekber</p>
+    </div>
+    <div class="layanan-card">
+      <img src="convert.jpeg" alt="Akun Premium">
+      <p>Convert Saldo</p>
+    </div>
+    <div class="layanan-card">
+      <img src="qris1.jpeg" alt="Pembayaran">
+      <p>QRIS & E-Wallet</p>
+    </div>
+    <div class="layanan-card">
+      <img src="layanan.jpeg" alt="Support">
+      <p>Customer Support 24/7</p>
+    </div>
+  </div>
+</div>
+
+  <footer class="bottom-nav">
+    <a href="index.html" class="nav-item">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3l9 9h-3v9h-12v-9h-3z"/></svg>
+      <span>Beranda</span>
+    </a>
+    <a href="testimoni.html" class="nav-item">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 6h-18v12h18v-12zm-2 10h-14v-8h14v8z"/></svg>
+      <span>Testi</span>
+    </a>
+  <a href="chat-admin.html" class="nav-item">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 24 24">
+      <path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.05-.24 11.36 11.36 0 0 0 3.55.57 1 1 0 0 1 1 1v3.5a1 1 0 0 1-1 1A17 17 0 0 1 3 5a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.36 11.36 0 0 0 .57 3.55 1 1 0 0 1-.24 1.05z"/>
+    </svg>
+    <span>Kontak</span>
+  </a>
+
+  <a href="layanan.html" class="nav-item active">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 24 24">
+      <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 15h-2v-6h2zm0-8h-2V7h2z"/>
+    </svg>
+    <span>Layanan</span>
+  </a>
+</footer>
+
+</body>
+</html>

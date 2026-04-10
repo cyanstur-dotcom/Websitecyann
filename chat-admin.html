@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chat Admin - Cyan Store</title>
+<style>
+body {
+  margin: 0;
+  background: #000000;
+  color: #000000;
+  font-family: 'Poppins', sans-serif;
+  padding: 40px;
+}
+
+.promo-text {
+  text-align: center;
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.promo-highlight {
+  color: #b505c5; 
+}
+
+.promo-sub {
+  margin-top: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #dcdcdc; 
+  letter-spacing: 0.5px;
+}
+
+.admin-footer {
+  margin-top: 40px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 600;
+  color: #00c8ff;
+  letter-spacing: 0.5px;
+}
+.admin-footer p {
+  margin: 0;
+}
+.admin-row {
+  display: flex;
+  align-items: center;
+  background: linear-gradient(135deg, #1c1c2e00, #2a2a3d00);
+  padding: 15px;
+  border-radius: 14px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 12px rgb(129, 3, 192);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.admin-row:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.6);
+}
+
+.admin-row img {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%; 
+  margin-right: 18px;
+  object-fit: cover;
+  border: 3px solid #00c8ff00;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.admin-row:hover img {
+  transform: scale(1.1);
+  border-color: #a00bc5; 
+}
+
+.admin-info h3 {
+  margin: 0 0 8px 0;
+  font-weight: 700;
+  color: #fff;
+}
+
+.ig-row {
+  display: flex;
+  align-items: center;
+  background: linear-gradient(135deg, #1c1c2e00, #2a2a3d);
+  padding: 15px;
+  border-radius: 14px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 12px rgb(154, 3, 192);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.ig-row:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.6);
+}
+
+.ig-footer {
+  margin-top: 40px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 600;
+  color: #00c8ff;
+  letter-spacing: 0.5px;
+}
+.ig-footer p {
+  margin: 0;
+}
+.ig-row img {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%; 
+  margin-right: 18px;
+  object-fit: cover;
+  border: 3px solid #00c8ff00;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+.ig-row:hover img {
+  transform: scale(1.1);
+  border-color: #03d5ff; 
+}
+
+.chat-btn {
+  display: inline-block;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #fff;
+  transition: background 0.3s ease;
+}
+
+.chat-btn.wa { background: #a00bc5; }
+.chat-btn.wa:hover { background: #811da8; }
+
+.chat-btn.ig { background: #04a0dd; }
+.chat-btn.ig:hover { background: #a903ac; }
+
+.ig-contact {
+  text-align: center;
+  margin-top: 25px;
+}
+
+footer {
+  margin-top: 40px;
+  text-align: center;
+  font-size: 13px;
+  color: #888;
+}
+
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: rgba(17, 17, 17, 0.85);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid #333;
+  padding: 8px 0;
+  z-index: 1000;
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #aaa;
+  font-size: 12px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.nav-item svg {
+  width: 22px;
+  height: 22px;
+  margin-bottom: 4px;
+  fill: #aaa;
+  transition: all 0.3s ease;
+}
+
+.nav-item.active,
+.nav-item.active svg {
+  color: #ff4fd8;
+  fill: #ff4fd8;
+}
+
+.nav-item:hover {
+  color: #fff;
+  transform: scale(1.1);
+}
+
+.nav-item:hover svg {
+  fill: #fff;
+}
+
+.nav-item:active {
+  transform: scale(0.9);
+  opacity: 0.8;
+}
+</style>
+</head>
+<body>
+<div class="promo-text">
+  CHAT ADMIN | <span class="promo-highlight">CYAN STORE</span><br>
+  <p class="promo-sub">Admin Fast Resspon On 24h</p>
+</div>
+
+    <div class="admin-row">
+      <img src="admin1.jpeg" alt="Admin 1">
+      <div class="admin-info">
+        <h3>Admin</h3>
+        <a href="https://wa.me/6285166940780" class="chat-btn wa">Chat Admin</a>
+      </div>
+    </div>
+
+    <div class="admin-row">
+      <img src="admin2.jpeg" alt="Admin 2">
+      <div class="admin-info">
+        <h3>Owner </h3>
+        <a href="https://wa.me/6285725215326" class="chat-btn wa">Chat Owner</a>
+      </div>
+    </div>
+
+        <div class="admin-row">
+      <img src="admin3.jpeg" alt="Admin 3">
+      <div class="admin-info">
+        <h3>Admin Nope</h3>
+        <a href="https://wa.me/62895401336727" class="chat-btn wa">Chat Nope</a>
+      </div>
+    </div>
+
+   <div class="ig-row">
+      <img src="ig.jpeg" alt="Instagram Resmi">
+      <div class="admin-info">
+        <h3>Instagram Resmi</h3>
+        <a href="https://www.instagram.com/cyannstorejb01?igsh=MWhoeTE2M3k2M25naw==" class="chat-btn ig" alt="Instagram"> Kunjungi Profile
+    </a>
+  </div>
+</div> 
+      <footer>
+      <p>Jam Operasional: 06.00 - 00.00 WIB</p>
+      <small>Respon Cepat Ketika Buka Hp</small>
+    </footer>
+<footer class="bottom-nav">
+  <a href="index.html" class="nav-item">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path d="M12 3l9 9h-3v9h-12v-9h-3z"/>
+    </svg>
+    <span>Beranda</span>
+  </a>
+
+  <a href="testimoni.html" class="nav-item">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path d="M21 6h-18v12h18v-12zm-2 10h-14v-8h14v8z"/>
+    </svg>
+    <span>Testi</span>
+  </a>
+
+  <a href="chat-admin.html" class="nav-item active">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.05-.24 11.36 11.36 0 0 0 3.55.57 1 1 0 0 1 1 1v3.5a1 1 0 0 1-1 1A17 17 0 0 1 3 5a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.36 11.36 0 0 0 .57 3.55 1 1 0 0 1-.24 1.05z"/>
+    </svg>
+    <span>Kontak</span>
+  </a>
+
+  <a href="layanan.html" class="nav-item">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 15h-2v-6h2zm0-8h-2V7h2z"/>
+    </svg>
+    <span>Layanan</span>
+  </a>
+</footer>
+  </div>
+</body>
+</html>
