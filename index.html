@@ -132,9 +132,9 @@ body {
 }
 
 .topup-card {
-  background: #1c1c2e00;
+  background: #37023d;
   border-radius: 15px;
-  box-shadow: 0 4px 12px #e600ff;
+  box-shadow: 0 4px 12px #e600ff00;
   transition: 0.3s;
   overflow: hidden;
 }
@@ -305,11 +305,12 @@ body {
   background: rgba(17, 17, 17, 0.85);
   backdrop-filter: blur(10px);
   border-top: 1px solid #333;
-  padding: 8px 0;
+  padding: 15px 0;
   z-index: 1000;
 }
 
 .nav-item {
+  position: relative; /* penting buat strip */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -326,14 +327,6 @@ body {
   fill: #aaa;
   transition: all 0.3s ease;
 }
-
-.nav-item.active,
-.nav-item.active svg {
-  color: #ac0db8; 
-  fill: #ac0db8;
-  transition: all 0.3s ease;
-}
-
 .nav-item:hover {
   color: #fff;
   transform: scale(1.1);
@@ -343,11 +336,74 @@ body {
   fill: #fff;
 }
 
-
-.nav-item.clicked {
+.nav-item:active {
   transform: scale(0.9);
   opacity: 0.8;
-  transition: all 0.2s ease;
+}
+.nav-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #aaa;
+  font-size: 12px;
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.nav-item svg {
+  width: 22px;
+  height: 22px;
+  margin-bottom: 4px;
+  fill: #aaa;
+  transition: fill 0.3s ease, transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+
+.nav-item.active::before {
+  content: "";
+  position: absolute;
+  top: -12px; 
+  left: 50%;
+  transform: translateX(-50%);
+  width: 24px;
+  height: 3px;
+  border-radius: 2px;
+  background: #a00bc5;
+  box-shadow: 0 0 6px #a00bc5;
+  opacity: 0;
+  animation: fadeSlide 0.4s ease forwards;
+}
+@keyframes fadeSlide {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+.nav-item.active,
+.nav-item.active svg {
+  color: #a00bc5;
+  fill: #a00bc5;
+}
+
+.nav-item:hover {
+  color: #fff;
+  transform: scale(1.05); /* lebih halus */
+}
+
+.nav-item:hover svg {
+  fill: #fff;
+  transform: translateY(-2px); /* sedikit naik */
+}
+
+.nav-item:active {
+  transform: scale(0.95);
+  opacity: 0.9;
 }
 </style>
 </head>
@@ -560,23 +616,31 @@ body {
 </div>
 <footer class="bottom-nav">
   <a href="index.html" class="nav-item active">
-    <svg xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 24 24">
-      <path d="M12 3l9 9h-3v9h-12v-9h-3z"/>
-    </svg>
+     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+     </svg>
     <span>Beranda</span>
   </a>
 
   <a href="testimoni.html" class="nav-item">
-    <svg xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 24 24">
-      <path d="M21 6h-18v12h18v-12zm-2 10h-14v-8h14v8z"/>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path d="M19 3h-4.18C14.4 1.84 13.3 1 12 1s-2.4.84-2.82 2H5c-1.1 
+               0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 
+               0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 
+               0c.55 0 1 .45 1 1s-.45 1-1 
+               1-1-.45-1-1 .45-1 1-1zm0 
+               14H7v-2h5v2zm5-4H7v-2h10v2zm0-4H7V7h10v2z"/>
     </svg>
-    <span>Testi</span>
+    Testimoni
   </a>
 
   <a href="chat-admin.html" class="nav-item">
-    <svg xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 24 24">
-      <path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.05-.24 11.36 11.36 0 0 0 3.55.57 1 1 0 0 1 1 1v3.5a1 1 0 0 1-1 1A17 17 0 0 1 3 5a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.36 11.36 0 0 0 .57 3.55 1 1 0 0 1-.24 1.05z"/>
-    </svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 
+           1.1.9 2 2 2h16c1.1 0 2-.9 
+           2-2V6c0-1.1-.9-2-2-2zm0 
+           4l-8 5-8-5V6l8 5 8-5v2z"/>
+</svg>
     <span>Kontak</span>
   </a>
 
@@ -587,21 +651,5 @@ body {
     <span>Layanan</span>
   </a>
 </footer>
-<script>
-  const navItems = document.querySelectorAll('.nav-item');
-  const currentPage = window.location.href.toLowerCase();
-  navItems.forEach(item => {
-    const link = item.href.toLowerCase(); 
-    if (currentPage.includes(link)) {
-      item.classList.add('active');
-    } else {
-      item.classList.remove('active');
-    }
-    item.addEventListener('click', () => {
-      item.classList.add('clicked');
-      setTimeout(() => item.classList.remove('clicked'), 200);
-    });
-  });
-</script>
 </body>
 </html>
